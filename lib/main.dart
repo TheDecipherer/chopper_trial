@@ -41,6 +41,8 @@ class GetSchoolsFuture extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           final String response = snapshot.data.body;
+          final String headers = snapshot.data.headers['set-cookie'];
+          print(headers);
           return ListTile(
             title: Text(response),
           );
